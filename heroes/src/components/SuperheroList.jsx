@@ -9,13 +9,13 @@ function SuperheroList({ heroes }) {
     <div className="superhero-list-container">
       <h3>Superhéroes Registrados:</h3>
       <div className="superhero-cards">
-        {/* Bonus Maestro: Mostrar cada superhéroe usando el método map */}
+        {/* Muestra cada superhéroe usando el método map */}
         {heroes.map((hero) => (
           <div key={hero.id} className="superhero-card">
             <h4>{hero.nombre} {hero.apellido}</h4>
-            <p>📧 {hero.correo}</p>
+            <p> {hero.correo}</p>
             {/* Aviso: En una aplicación real, NUNCA muestres la contraseña */}
-            <p className='secret-data'>🔓 Contraseña registrada (Ultra Secreta)</p>
+            <p className='secret-data'> Contraseña registrada (Ultra Secreta)</p>
           </div>
         ))}
       </div>

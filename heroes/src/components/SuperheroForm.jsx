@@ -9,7 +9,7 @@ const initialFormState = {
   confirmarContrasena: '',
 };
 
-// Función de validación central (pura)
+// Función de validación 
 const validate = (formData) => {
   let errors = {};
 
@@ -51,7 +51,7 @@ const validate = (formData) => {
   return errors;
 };
 
-// 🔹 Componente separado para los inputs
+// Componente separado para los inputs
 const InputField = ({ label, name, type = 'text', value, error, onChange, onBlur }) => {
   return (
     <div className="form-group">

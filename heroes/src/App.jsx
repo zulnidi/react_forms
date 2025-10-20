@@ -5,22 +5,22 @@ import img from './assets/img/spiderman.png';
 import './App.css'; 
 
 function App() {
-  // Estado para el encabezado (Requisito Adicional)
+  // Estado para el encabezado 
   const [appHeader, setAppHeader] = useState("¡Bienvenido a la Liga de Superhéroes!");
 
-  // Estado para la lista de superhéroes (Bonus Maestro)
+  // Estado para la lista de superhéroes 
   const [superheroes, setSuperheroes] = useState([]);
 
   // Función que agrega el héroe y cambia el encabezado
   const handleAddSuperhero = (formData) => {
-    // 1. Agregar el nuevo superhéroe a la lista
+    // Agrega el nuevo superhéroe a la lista
     const newSuperhero = {
       ...formData,
-      id: Date.now(), // ID único
+      id: Date.now(),
     };
     setSuperheroes((prevSuperheroes) => [...prevSuperheroes, newSuperhero]);
 
-    // 2. Cambiar el encabezado de la página (Bonus Maestro)
+    //Cambia el encabezado de la página 
     setAppHeader("¡Registro Exitoso! Superhéroes Registrados:");
   };
 
@@ -29,16 +29,15 @@ function App() {
       <h1>{appHeader}</h1>
       <hr />
       
-      {/* CLAVE: La key estática evita que React trate el formulario como nuevo en cada renderizado */}
       <SuperheroForm 
         key="superhero-registration-form-stable" 
         onAddSuperhero={handleAddSuperhero} 
       />
       
-      {/* Renderizado de la lista (Bonus Maestro) */}
+      {/* Renderizado de la lista */}
       <SuperheroList heroes={superheroes} /> 
 
-      {/* Visualización de la imagen opcional */}
+      {/* Visualización de la imagen */}
       <div className='superhero-image-container'>
         <img src={img} alt="Superhéroe corriendo" className="superhero-img"/> 
       </div>
